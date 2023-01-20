@@ -72,7 +72,7 @@ In the previous section (**Frontend**) you reached out to the JSONPlaceholder AP
 :heavy_exclamation_mark: In this section, the two challenges are **not** mutually exclusive. That is, you can complete both of them, or just choose to implement one of them.
 
 #### Challenge #2.1
-Implement your own backed using a language and libraries of your choice. The only requirement is that the backend needs to support CRUD operations and can seamlessy replace the JSONPlaceholder API in the challenges of Section 1).
+Implement your own backend using a language and libraries of your choice. The only requirement is that the backend needs to support CRUD operations and can seamlessy replace the JSONPlaceholder API in the challenges of Section 1).
 
 #### Challenge #2.2
 The requirements for this challenge are the exact same requirements of the previous challenge (#2.1), but we ask you to fullfil these requirements using the [Firebase](https://firebase.google.com/) services provided by Google.
