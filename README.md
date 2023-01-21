@@ -41,13 +41,11 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
 To learn Vite, check out the [Vite documentation](https://vitejs.dev/).
 
 ### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://vitejs.dev/)
 
 ### Analyzing the Bundle Size
 
