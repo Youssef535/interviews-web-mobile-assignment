@@ -15,12 +15,12 @@ Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm run preview`
+### `vite preview`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://vitejs.dev/guide/static-deploy.html) for more information.
 
-### `npm run build`
+### `vite build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React-Vite in production mode and optimizes the build for the best performance.
