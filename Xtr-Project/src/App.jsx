@@ -9,10 +9,7 @@ function App() {
     <div className="App">
       
       <h1>hello vite</h1>
-      <h3>sdsdsd</h3>
-
       
-    
     </div>
   )
 }
