@@ -7,6 +7,7 @@ This project was bootstrapped with [Create-vite](https://github.com/vitejs/vite/
 In the project directory, you can run:
 
 ### `run dev`
+:heavy_exclamation_mark:**Important**: If npm run dev didn't work please type cd Xtr-Project Then npm run dev
 
 Runs the app in the development mode.\
 Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
