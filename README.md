@@ -6,7 +6,7 @@ This project was bootstrapped with [Create-vite](https://github.com/vitejs/vite/
 
 In the project directory, you can run:
 
-### `run dev`
+### `npm run dev`
 :heavy_exclamation_mark:**Important**: If npm run dev didn't work please type cd Xtr-Project Then npm run dev
 
 Runs the app in the development mode.\
@@ -15,12 +15,17 @@ Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `vite preview`
+### `npm preview`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://vitejs.dev/guide/static-deploy.html) for more information.
+Launches the Preview runner in the interactive watch mode.\
+See the section about [running Preview](https://vitejs.dev/guide/static-deploy.html) for more information.
 
-### `vite build`
+### `npm test`
+
+Launches the Test runner in the interactive watch mode.\
+See the section about [Test](https://vitejs.dev/guide/static-deploy.html#testing-the-app-locally) for more information.
+
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React-Vite in production mode and optimizes the build for the best performance.
