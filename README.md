@@ -66,4 +66,14 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Youssef Soltani - [@YoussefSoltani](https://twitter.com/Youssef60459694) - youssefsoltani53@yahoo.com
+This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
+
+### Advanced Configuration
+
+This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
+
+### Deployment
+
+This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
+
+
