@@ -14,11 +14,16 @@ body {
   color:white;
   min-height: 100vh;
 }
-
 .Heading-1 {
   font-size: 30px;
   font-weight: 700;
   line-height: 1.5;
   color: rgb(157, 155, 153);
   padding-top: 90px;       /*120 to 60px*/
+}
+.offcanvas-header {
+  background-color: #121212;
+}
+.offcanvas-body {
+  background-color: #121212;
 }
