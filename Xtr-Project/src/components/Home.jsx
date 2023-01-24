@@ -1,6 +1,5 @@
-import { React,useState } from "react";
+import { React, useState } from "react";
 import { Container, Button, Row, Offcanvas } from "react-bootstrap";
-
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -16,16 +15,22 @@ const Home = () => {
             the user.
           </h3>
         </Row>
-        <Button as="input" type="submit" value="Get Started" className="submit-btn" onClick={handleShow}/>
+        <Button
+          as="input"
+          type="submit"
+          value="Get Started"
+          className="submit-btn"
+          onClick={handleShow}
+        />
         <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
-      </Offcanvas>
+          <Offcanvas.Header closeButton closeVariant="white">
+            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </Offcanvas.Body>
+        </Offcanvas>
       </Container>
     </div>
   );
