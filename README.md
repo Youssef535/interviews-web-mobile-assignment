@@ -6,7 +6,7 @@ This project was bootstrapped with [Create-vite](https://github.com/vitejs/vite/
 
 In the project directory, you can run:
 
-### `run dev`
+### `npm run dev`
 :heavy_exclamation_mark:**Important**: If npm run dev didn't work please type cd Xtr-Project Then npm run dev
 
 Runs the app in the development mode.\
@@ -15,12 +15,17 @@ Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `vite preview`
+### `npm preview`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://vitejs.dev/guide/static-deploy.html) for more information.
+Launches the Preview runner in the interactive watch mode.\
+See the section about [running Preview](https://vitejs.dev/guide/static-deploy.html) for more information.
 
-### `vite build`
+### `npm test`
+
+Launches the Test runner in the interactive watch mode.\
+See the section about [Test](https://vitejs.dev/guide/static-deploy.html#testing-the-app-locally) for more information.
+
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React-Vite in production mode and optimizes the build for the best performance.
@@ -40,28 +45,25 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+<!-- CONTRIBUTING -->
+## Contributing
 
-To learn Vite, check out the [Vite documentation](https://vitejs.dev/).
+**This Landing Page** is open-source and open to contributors. We apperciate all of your efforts making The project a reliable environment.
 
-### Code Splitting
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-This section has moved here: [https://vitejs.dev/guide/features.html](https://vitejs.dev/guide/features.html)
+1. Fork the Project
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push`)
+5. Open a Pull Request with adding a feature explaining to make it easy to understand
 
-### Analyzing the Bundle Size
+<!-- LICENSE -->
+## License
 
-This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
+Distributed under the MIT License. See `LICENSE.md` for more information.
 
-### Making a Progressive Web App
+<!-- CONTACT -->
+## Contact
 
-This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/](https://vitejs.dev/)
-
-
+Youssef Soltani - [@YoussefSoltani](https://twitter.com/Youssef60459694) - youssefsoltani53@yahoo.com
