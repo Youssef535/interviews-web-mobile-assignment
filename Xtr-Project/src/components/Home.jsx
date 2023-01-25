@@ -1,12 +1,20 @@
 import { React, useState } from "react";
-import { Container, Button, Row, Offcanvas } from "react-bootstrap";
+import { Container, Button, Row, Offcanvas,Navbar } from "react-bootstrap";
+import {  Link } from "react-router-dom";
 
 const Home = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <div>
+      <Navbar className="fixed-top">
+        <Container>
+          <Navbar.Brand as={Link} to='/' className="text-light">XTR-APP</Navbar.Brand>
+        </Container>
+      </Navbar>
+      <br />
       <Container fluid="md">
         <Row>
           <h3 className="Heading-1 justify-content-center">
@@ -24,11 +32,31 @@ const Home = () => {
         />
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton closeVariant="white">
-            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+            <Offcanvas.Title>XTR Project</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
+            <ul>
+              <li>
+                <Button className="m-2" size="sm" as={Link} to="/Create">
+                  Add Post
+                </Button>
+              </li>
+              <li>
+                <Button className="m-2" size="sm" as={Link} to="/Get">
+                  Get Posts
+                </Button>
+              </li>
+              <li>
+                <Button className="m-2" size="sm" as={Link} to="/Update">
+                  Update Posts
+                </Button>
+              </li>
+              <li>
+                <Button className="m-2" size="sm" as={Link} to="/Delete">
+                  Delete Posts
+                </Button>
+              </li>
+            </ul>
           </Offcanvas.Body>
         </Offcanvas>
       </Container>
