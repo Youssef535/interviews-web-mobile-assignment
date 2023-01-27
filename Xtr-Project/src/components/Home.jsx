@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-import { Container, Button, Row, Offcanvas,Navbar } from "react-bootstrap";
-import {  Link } from "react-router-dom";
+import { Container, Button, Row, Offcanvas, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +11,9 @@ const Home = () => {
     <div>
       <Navbar className="fixed-top">
         <Container>
-          <Navbar.Brand as={Link} to='/' className="text-light">XTR-APP</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/" className="text-light">
+            XTR-APP
+          </Navbar.Brand>
         </Container>
       </Navbar>
       <br />
