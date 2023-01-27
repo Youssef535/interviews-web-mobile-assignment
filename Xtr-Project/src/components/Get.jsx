@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Pagination, Button, Card, Row } from "react-bootstrap";
+import { Container, Button, Card, Row, Col } from "react-bootstrap";
 
 const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
@@ -18,7 +18,7 @@ const Posts = () => {
     );
     setPosts(data);
     setLoading(false);
-    console.log(data);
+    //console.log(data);
   };
 
   useEffect(() => {
@@ -40,22 +40,33 @@ const Posts = () => {
 
   return (
     <Container>
-      <Row>
-        <Card bg="dark" className="pt-2">
-          <ul>
-            {posts.map((post) => (
-              <Card.Body>
-              <li className="d-flex justify-content-center"  key={post.id}>{post.title}</li>
-              <p>{post.body}</p>
-              </Card.Body>
-            ))}
-          </ul>
-          <div className="d-flex justify-content-center">
-            <Button size="sm" onClick={() => handlePagination("prev")}>Previous</Button>
-            <span className="p-2">{currentPage}</span>
-            <Button size="sm" onClick={() => handlePagination("next")}>Next</Button>
-          </div>
-        </Card>
+      <Row  className="g-4">
+        <Col>
+          <Card bg="dark" className="pt-2">
+            <ul>
+              {posts.map((post) => (
+                <Card.Body>
+                  <Card.Title
+                    className="d-flex justify-content-center"
+                    key={post.id}
+                  >
+                    {post.title}
+                  </Card.Title>
+                  <Card.Text>{post.body}</Card.Text>
+                </Card.Body>
+              ))}
+            </ul>
+            <div className="d-flex justify-content-center">
+              <Button size="sm" onClick={() => handlePagination("prev")}>
+                Previous
+              </Button>
+              <span className="p-2">{currentPage}</span>
+              <Button size="sm" onClick={() => handlePagination("next")}>
+                Next
+              </Button>
+            </div>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );
