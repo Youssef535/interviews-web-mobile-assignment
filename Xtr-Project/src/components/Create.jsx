@@ -1,53 +1,107 @@
-import { useState, useEffect, React } from "react";
-import axios from "axios";
-import { Container, Button, Row, Form } from "react-bootstrap";
+import  { useState, useEffect,React } from 'react';
+import axios from 'axios';
+import { Container, Button, Card, Row, FloatingLabel, Form} from "react-bootstrap";
 
-const API_URL = "https://jsonplaceholder.typicode.com/posts";
+const client = axios.create({
+	baseURL: 'https://jsonplaceholder.typicode.com/posts',
+});
 
-const EditPost = ({ postId }) => {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+const Create = () => {
+	const [title, setTitle] = useState('');
+	const [body, setBody] = useState('');
+	const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      const { data } = await axios.get(`${API_URL}/${postId}`);
-      setTitle(data.title);
-      setBody(data.body);
-    };
-    fetchPost();
-  }, [postId]);
+	// GET with Axios
+	useEffect(() => {
+		const fetchPost = async () => {
+			try {
+				let response = await client.get('?_limit=10');
+				setPosts(response.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchPost();
+	}, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const updatedPost = { title, body };
-    await axios.post(`${API_URL}/${postId}`, updatedPost);
-  };
+	// DELETE with Axios
+	const deletePost = async (id) => {
+		try {
+			await client.delete(`${id}`);
+			setPosts(
+				posts.filter((post) => {
+					return post.id !== id;
+				})
+			);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-  return (
-    <Container>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Control
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Control
-            type="text"
-            placeholder="Body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-        </Form.Group>
-        <Button size="sm" type="submit">
-          Save Changes
-        </Button>
-      </Form>
-    </Container>
-  );
+	// handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		addPosts(title, body);
+	};
+
+	// POST with Axios
+	const addPosts = async (title, body) => {
+		try {
+			let response = await client.post('', {
+				title: title,
+				body: body,
+			});
+			setPosts([response.data, ...posts]);
+			setTitle('');
+			setBody('');
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	return (
+		<Container>
+			<nav>
+				<h3 className='d-flex justify-content-center'>POSTS APP</h3>
+			</nav>
+			<Row>
+				<form onSubmit={handleSubmit}>
+					<input
+						type="text"
+						className="form-control"
+						value={title}
+						onChange={(e) => setTitle(e.target.value)}
+					/>
+					<textarea
+						name=""
+						className="form-control"
+						id=""
+						cols="10"
+						rows="8"
+						value={body}
+						onChange={(e) => setBody(e.target.value)}
+					></textarea>
+					<Button size='sm' type="submit">Add Post</Button>
+				</form>
+			</Row>
+			<div className="posts-container">
+				<h2>All Posts 📫</h2>
+				{posts.map((post) => {
+					return (
+						<div className="post-card" key={post.id}>
+							<h2 className="post-title">{post.title}</h2>
+							<p className="post-body">{post.body}</p>
+							<div className="button">
+								<Button size='sm' variant='danger' className="" onClick={() => deletePost(post.id)}>
+									Delete
+								</Button>
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</Container>
+	);
 };
 
-export default EditPost;
+export default Create;
