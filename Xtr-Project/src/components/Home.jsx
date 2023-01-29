@@ -48,16 +48,6 @@ const Home = () => {
                   Get Posts
                 </Button>
               </li>
-              <li>
-                <Button className="m-2" size="sm" as={Link} to="/Update">
-                  Update Posts
-                </Button>
-              </li>
-              <li>
-                <Button className="m-2" size="sm" as={Link} to="/Delete">
-                  Delete Posts
-                </Button>
-              </li>
             </ul>
           </Offcanvas.Body>
         </Offcanvas>
