@@ -12,11 +12,12 @@ import {
 const client = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/posts",
 });
-
+//  add localStorage if you want to keep your work
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [posts, setPosts] = useState([]);
+  const [id, setID] = useState(null);
 
   // GET with Axios
   useEffect(() => {
@@ -65,7 +66,20 @@ const Create = () => {
       console.log(error);
     }
   };
+  //  Update With axios
+  const handleUpdate = async (post) => {
+    //post.title = post;
+    post.body = "updated";
+    await axios.put(client + "/" + post.id);
+    const postsClone = [...posts];
+    const index = postsClone.indexOf(post);
+    postsClone[index] = { ...post };
+    setPosts(postsClone);
+  };
 
+  
+  //for adding comment under the posts body fetch the api url and add a function and a button handleComment and then add css class for the animatin
+  // i'm trying to not using unnecessary thing < consedering working with big apps with best practice
   return (
     <Container>
       <nav>
@@ -99,9 +113,9 @@ const Create = () => {
         {posts.map((post) => {
           return (
             <div className="post-card" key={post.id}>
-              <h2 className="post-title">{post.title}</h2>
-              <p className="post-body">{post.body}</p>
-              <div className="button">
+              <h2>{post.title}</h2>
+              <p>{post.body}</p>
+              <div>
                 <Button
                   size="sm"
                   variant="danger"
@@ -110,6 +124,24 @@ const Create = () => {
                 >
                   Delete
                 </Button>
+                <Button
+                  size="sm"
+                  variant="success"
+                  className="m-1"
+                  onClick={() => handleUpdate(post)}
+                >
+                  Update
+                </Button>
+                {/*
+                <Button
+                  size="sm"
+                  variant="success"
+                  className="m-1"
+                  //onClick={() => handleComment(post)}
+                >
+                  Comment
+                </Button>
+                */}
               </div>
             </div>
           );
